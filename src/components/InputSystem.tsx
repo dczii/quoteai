@@ -25,7 +25,7 @@ export const InputSystem = ({
   };
 
   return (
-    <div className='max-w-4xl mx-auto px-4 py-12'>
+    <div className='max-w-4xl mx-auto px-4'>
       <Panel initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
         <div className='mb-8'>
           <h2 className='text-3xl font-bold text-brand-primary mb-4'>Project Requirements</h2>
