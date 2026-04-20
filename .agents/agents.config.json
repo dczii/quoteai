@@ -1,0 +1,37 @@
+{
+  "repo": "QuoteCraft-AI",
+  "version": "1.0",
+  "agents": {
+    "pm": {
+      "enabled": true
+    },
+    "frontend_dev": {
+      "enabled": true
+    },
+    "backend_dev": {
+      "enabled": true
+    },
+    "tester": {
+      "enabled": true
+    },
+    "pr_reviewer": {
+      "enabled": true
+    },
+    "ux_designer": {
+      "enabled": true
+    }
+  },
+  "model": {
+    "provider": "ide",
+    "note": "Uses your IDE AI via MCP — no API key needed in useragent0"
+  },
+  "conventions": {
+    "commit_format": "freeform",
+    "branch_prefix": "agents/",
+    "test_framework": "jest"
+  },
+  "human_gates": {
+    "require_approval_at_commit": true,
+    "require_approval_at_qa": true
+  }
+}
