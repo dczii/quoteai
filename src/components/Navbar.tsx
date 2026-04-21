@@ -1,7 +1,7 @@
 import React from "react";
 import { Calculator } from "lucide-react";
 
-export const Navbar = () => (
+export const Navbar = ({ onHowItWorks }: { onHowItWorks?: () => void }) => (
   <nav className='w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100'>
     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
       <div className='flex justify-between h-16 items-center'>
@@ -14,9 +14,9 @@ export const Navbar = () => (
           </span>
         </div>
         <div className='hidden md:flex items-center gap-8 text-sm font-medium text-muted'>
-          <a href='#' className='hover:text-brand-accent transition-colors'>
+          <button onClick={onHowItWorks} className='hover:text-brand-accent transition-colors cursor-pointer'>
             How it works
-          </a>
+          </button>
           <a href='#' className='hover:text-brand-accent transition-colors'>
             Pricing
           </a>

@@ -12,9 +12,10 @@ import { InputSystem } from "./components/InputSystem";
 import { TeamSelection } from "./components/TeamSelection";
 import { QuoteResult } from "./components/QuoteResult";
 import { GeneratingQuote } from "./components/Generating";
+import { HowItWorks } from "./components/HowItWorks";
 
 export default function App() {
-  const [step, setStep] = useState<"landing" | "input" | "team" | "result">("landing");
+  const [step, setStep] = useState<"landing" | "how-it-works" | "input" | "team" | "result">("landing");
   const [isLoading, setIsLoading] = useState(false);
   const [quote, setQuote] = useState<ProjectQuote | null>(null);
   const [projectDescription, setProjectDescription] = useState("");
@@ -47,7 +48,7 @@ export default function App() {
 
   return (
     <div className='min-h-screen bg-brand-canvas font-sans text-brand-primary selection:bg-brand-badge selection:text-brand-primary flex flex-col'>
-      <Navbar />
+      <Navbar onHowItWorks={() => setStep("how-it-works")} />
 
       <main className='flex-1 flex justify-center items-center'>
         <AnimatePresence mode='wait'>
@@ -58,7 +59,19 @@ export default function App() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, y: -20 }}
             >
-              <Hero onStart={() => setStep("input")} />
+              <Hero onStart={() => setStep("input")} onHowItWorks={() => setStep("how-it-works")} />
+            </motion.div>
+          )}
+
+          {step === "how-it-works" && (
+            <motion.div
+              key='how-it-works'
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className='w-full max-w-7xl mx-auto px-4'
+            >
+              <HowItWorks onBack={() => setStep("landing")} onStart={() => setStep("input")} />
             </motion.div>
           )}
 

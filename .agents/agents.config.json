@@ -18,7 +18,7 @@
       "enabled": true
     },
     "ux_designer": {
-      "enabled": true
+      "enabled": false
     }
   },
   "model": {
@@ -26,7 +26,7 @@
     "note": "Uses your IDE AI via MCP — no API key needed in useragent0"
   },
   "conventions": {
-    "commit_format": "freeform",
+    "commit_format": "conventional",
     "branch_prefix": "agents/",
     "test_framework": "jest"
   },

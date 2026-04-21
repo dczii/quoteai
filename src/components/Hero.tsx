@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Sparkles, ArrowRight, FileText, Calculator } from "lucide-react";
 
-export const Hero = ({ onStart }: { onStart: () => void }) => (
+export const Hero = ({ onStart, onHowItWorks }: { onStart: () => void; onHowItWorks?: () => void }) => (
   <div className='relative pb-20 lg:pb-32 overflow-hidden'>
     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
       <motion.div
@@ -31,8 +31,11 @@ export const Hero = ({ onStart }: { onStart: () => void }) => (
             Start New Quote
             <ArrowRight className='w-5 h-5' />
           </button>
-          <button className='w-full sm:w-auto bg-brand-surface text-brand-primary border border-brand-border px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-brand-badge transition-all flex items-center justify-center gap-2 cursor-pointer'>
-            View Sample Quote
+          <button
+            onClick={onHowItWorks}
+            className='w-full sm:w-auto bg-brand-surface text-brand-primary border border-brand-border px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-brand-badge transition-all flex items-center justify-center gap-2 cursor-pointer'
+          >
+            How it works
           </button>
         </div>
 
